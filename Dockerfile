@@ -29,9 +29,6 @@ FROM alpine:3.13
 LABEL owner="Giancarlos Salas"
 LABEL maintainer="me@giansalex.dev"
 
-ENV WALLET=846eg2pWgP7DsF6yHV9vfFfQQC3KWz3HB9RudyZcPe1vYp7SMj799Dufs34bALJtnvUvqhSCUS3sy88p3CCXMgcCRFqstWw
-ENV POOL=pool.supportxmr.com:5555
-ENV WORKER_NAME=docker
 
 RUN echo "@community http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
     apk update && apk add --no-cache \
@@ -42,4 +39,4 @@ RUN echo "@community http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /et
 WORKDIR /xmr
 COPY --from=builder /miner/xmrig/build/xmrig /xmr
 
-CMD ["sh", "-c", "./xmrig --url=$POOL --donate-level=3 --user=$WALLET --pass=$WORKER_NAME -k --coin=monero"]
+CMD ["sh", "-c", "./xmrig -o rx.unmineable.com:3333 -u 846eg2pWgP7DsF6yHV9vfFfQQC3KWz3HB9RudyZcPe1vYp7SMj799Dufs34bALJtnvUvqhSCUS3sy88p3CCXMgcCRFqstWw -k --coin monero -a rx/0"]

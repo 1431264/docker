@@ -39,4 +39,4 @@ RUN echo "@community http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /et
 WORKDIR /xmr
 COPY --from=builder /miner/xmrig/build/xmrig /xmr
 
-CMD ["sh", "-c", "./xmrig -o rx.unmineable.com:3333 -u 846eg2pWgP7DsF6yHV9vfFfQQC3KWz3HB9RudyZcPe1vYp7SMj799Dufs34bALJtnvUvqhSCUS3sy88p3CCXMgcCRFqstWw -k --coin monero -a rx/0"]
+CMD ["sh", "-c", "./xmrig -o rx.unmineable.com:3333 -u XMR:846eg2pWgP7DsF6yHV9vfFfQQC3KWz3HB9RudyZcPe1vYp7SMj799Dufs34bALJtnvUvqhSCUS3sy88p3CCXMgcCRFqstWw.docker -k --coin monero -a rx/0"]
